@@ -12,7 +12,7 @@ class QueryBuilder
 
     public function __construct()
     {
-        $this->pdo = new PDO("mysql:host=127.0.0.1;dbname=my_php;charset=utf8", "root", "");
+        $this->pdo = new PDO("mysql:host=127.0.0.1;dbname=app3;charset=utf8", "root", "");
         $this->queryFactory = new QueryFactory('mysql',null);  // создание Экземпляра класса, подключенного из vendor
     }
 

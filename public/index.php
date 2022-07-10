@@ -2,25 +2,18 @@
 
 require '../vendor/autoload.php';
 
-//echo "11";
-
 // записываем в диспетчер пути(роуты), которые будут доступны в приложении, припереходе по Роуту, передаются данные указанные в параметре
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-    // добавление роута, указываем ('метод-доступа','путь-в-URL-при-котором-вызовем-контроллер','контроллер-обработчик-которая-будет-вызываться')
-    $r->addRoute('GET', '/userss', 'get_all_users_handler');        //  http://localhost/users
-    // \d+ - должен быть цифрой, {id:\d+} - id: - будет ключем для доступа к \d+
-    $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');    //  http://localhost/user/5
-    // The /{title} suffix is optional  // опциональный, не обязательный параметр
-    $r->addRoute('GET', '/articles/{id:\d+}[/{title}]', 'get_article_handler');
-
 
     // в параметре роута можно передать не только строку - 'get_all_users_handler', но и массив
     $r->addRoute('GET', '/home', ['App\controllers\HomeController','index']); //HomeController - класс, index - метод Класса
     // роут на страницу /about
     $r->addRoute('GET', '/about', ['App\controllers\HomeController','about']);
+    // роут на страницу /verification
+    $r->addRoute('GET', '/verification', ['App\controllers\HomeController','email_verification']);
 
-
-    $r->addRoute('GET', '/about/{cash:\d+}', ['App\controllers\HomeController','about']);  //  http://localhost/about/5
+    // роут на страницу /login
+    $r->addRoute('GET', '/login', ['App\controllers\HomeController','login']);
 });
 
 

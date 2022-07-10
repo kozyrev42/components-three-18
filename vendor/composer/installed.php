@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '19debb0bf53c5d407f21c140a2cacc93feb57dc3',
+        'reference' => '6137365a90660e684b4eb3b34a499ffa2d2527c5',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '19debb0bf53c5d407f21c140a2cacc93feb57dc3',
+            'reference' => '6137365a90660e684b4eb3b34a499ffa2d2527c5',
             'dev_requirement' => false,
         ),
         'aura/sqlquery' => array(
