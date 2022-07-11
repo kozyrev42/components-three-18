@@ -27,8 +27,24 @@ class HomeController
 
     public function index($vars)
     {   
+        //назначение роли Юзеру
+        /* try {
+            $this->auth->admin()->addRoleForUserById(3, \Delight\Auth\Role::ADMIN);
+        }
+        catch (\Delight\Auth\UnknownIdException $e) {
+            die('Unknown user ID');
+        }
+        exit; */
+
+        //выход из системы, удаление сессии
+        //$this->auth->logOut();exit;
+        
+
+        // проверка роли Юзера
+        d($this->auth->getRoles());exit;
+
         // проверка, вошел ли Юзер
-        d($this->auth->isLoggedIn());
+        d($this->auth->isLoggedIn());exit;
 
         // получим емаил
         //$email = $auth->getEmail();
@@ -42,6 +58,7 @@ class HomeController
         echo $this->templates->render('homepage', ['postsInView' => $posts]); // в вид передаём результат вызова из базы ['posts' => $posts]
     }
 
+    // регистрация юзера в базе
     public function about($vars)
     {
         try {
@@ -79,7 +96,7 @@ class HomeController
         try {
             // метод получит 'selector' и 'token' из письма юзера, если совпадёт, то верифицирует Юзера в базе
             //$this->auth->confirmEmail($_GET['selector'], $_GET['token']);
-            $this->auth->confirmEmail('8WUunpyCRi2E2vWD', 'mZwzofNrhAk3Gwe4');
+            $this->auth->confirmEmail('DOH750z2iHpqwkuE', 'R7Eh3xVWp8tWnjbZ');
 
             echo 'Email address has been verified';
         }

@@ -33,7 +33,7 @@ $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 
 
 // обработка пути из URL
-switch ($routeInfo[0]) {    // по умолчание $routeInfo[0]
+switch ($routeInfo[0]) {    //  $routeInfo[0] - в зависимости от существования роута в диспетчере = 0 or 1 or 2
 
     case FastRoute\Dispatcher::NOT_FOUND:   // условие для выполнение кейса - подтягивание констант из FastRoute\Dispatcher,  NOT_FOUND - константа содержит "0"
         // кейс в котором - $routeInfo[0] - такой страницы не существует 
